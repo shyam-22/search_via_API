@@ -1,6 +1,6 @@
 import React,{Component} from "react";
 import axios from 'axios';
-import Product from '../component/Product';
+import Product from "../component/Product";
 
 class Search extends Component
 {
@@ -23,7 +23,7 @@ class Search extends Component
 formSubmit = async(event)=>
 {
     event.preventDefault();
-    let item= await axios.get(`https://pixabay.com/api/?key=14625994-aa9574ef77193ce59b58c7f5b&q=yellow+${this.state.change}&image_type=photo&pretty=true`);
+    let item= await axios.get(`https://pixabay.com/api/?key=14625994-aa9574ef77193ce59b58c7f5b&q=${this.state.change}&image_type=photo&pretty=true`);
     this.setState({products: item.data});
 }
 
@@ -41,6 +41,7 @@ formSubmit = async(event)=>
 
                             //we define in just one line ......& make it more simple
                             />
+
                             </div>
                         
                         </form>

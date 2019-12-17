@@ -1,8 +1,10 @@
 import React from "react";
 
 const Product= (props) =>
-{
-    console.log(props);
+{if(!props.pro.hits){
+    return null
+}
+    // console.log(props);
         return(
             <div className="container">
                 <div className="row">      
@@ -11,10 +13,10 @@ const Product= (props) =>
                                     
                                         <div className="col-md-3">
                                         <div className="card text-left">
-                                                   <img class="card-img-top" src={data.largeImageURL} alt="data.tags"/>>
+                                                   <img class="card-img-top" src={data.largeImageURL} alt="data.tags"/>
                                                    <div class="card-body">
                                 <h4 class="card-title">{data.user}</h4>
-                                <p class="card-text">Total Likes:{data.likes}</p>
+                                <p class="card-text">Likes:{data.likes}</p>
                                                           </div>
                                                         </div>
                                                 </div>
